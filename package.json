@@ -1,0 +1,25 @@
+{
+  "name": "tamu-tik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raygums/Digitamu-UPATIK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/raygums/Digitamu-UPATIK/issues"
+  },
+  "homepage": "https://github.com/raygums/Digitamu-UPATIK#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
