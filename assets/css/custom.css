@@ -1,0 +1,109 @@
+/* DigiTamu TIK - Custom Styles */
+
+/* Background pattern topografi */
+.bg-topografi {
+    background-color: #e0f2fe;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath fill='none' stroke='%2393c5fd' stroke-width='1' d='M0 100 Q150 50 300 100 T600 100'/%3E%3Cpath fill='none' stroke='%2393c5fd' stroke-width='1' d='M0 200 Q150 150 300 200 T600 200'/%3E%3Cpath fill='none' stroke='%2393c5fd' stroke-width='1' d='M0 300 Q150 250 300 300 T600 300'/%3E%3Cpath fill='none' stroke='%2393c5fd' stroke-width='1' d='M0 400 Q150 350 300 400 T600 400'/%3E%3Cpath fill='none' stroke='%2393c5fd' stroke-width='1' d='M0 500 Q150 450 300 500 T600 500'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+}
+
+/* Alternative topografi dengan SVG inline */
+.bg-topografi-alt {
+    background: 
+        linear-gradient(135deg, transparent 25%, rgba(147, 197, 253, 0.1) 25%, rgba(147, 197, 253, 0.1) 50%, transparent 50%, transparent 75%, rgba(147, 197, 253, 0.1) 75%),
+        #e0f2fe;
+    background-size: 40px 40px;
+}
+
+/* Camera preview container */
+.camera-container {
+    position: relative;
+    background: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.camera-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.camera-container canvas {
+    display: none;
+}
+
+/* Form card shadow */
+.form-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Service card hover effect */
+.service-card {
+    transition: all 0.3s ease;
+    border: 2px solid #e0f2fe;
+}
+
+.service-card:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15);
+}
+
+/* Sidebar active menu */
+.sidebar-menu-active {
+    background: linear-gradient(90deg, #38bdf8 0%, #0ea5e9 100%);
+}
+
+/* Table row hover */
+.table-row-hover:hover {
+    background-color: rgba(248, 250, 252, 0.8);
+}
+
+/* Badge styles */
+.badge-success {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.badge-warning {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.badge-danger {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.badge-info {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+/* Stats card */
+.stats-card {
+    background: white;
+    border: 1px solid #f1f5f9;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading spinner */
+.spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #38bdf8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
