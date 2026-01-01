@@ -1,12 +1,8 @@
 <?php
-/**
- * Footer Component untuk halaman publik
- */
 ?>
 <footer class="bg-[#1e293b] text-white py-10 px-6">
     <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <!-- Alamat -->
             <div>
                 <h4 class="font-bold text-lg mb-4">UPA TIK Unila</h4>
                 <p class="text-slate-400 text-sm leading-relaxed">
@@ -16,7 +12,6 @@
                 </p>
             </div>
 
-            <!-- Kontak -->
             <div>
                 <h4 class="font-bold text-lg mb-4">Kontak Kami</h4>
                 <div class="text-slate-400 text-sm space-y-2">
@@ -26,7 +21,6 @@
                 </div>
             </div>
 
-            <!-- Tautan -->
             <div>
                 <h4 class="font-bold text-lg mb-4">Tautan Cepat</h4>
                 <ul class="text-slate-400 text-sm space-y-2">

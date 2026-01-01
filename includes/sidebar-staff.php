@@ -1,22 +1,22 @@
 <?php
-/**
- * Sidebar Component untuk Staff
- */
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <aside class="fixed left-0 top-0 w-56 h-full bg-[#1e293b] text-white flex flex-col z-50">
     
-    <!-- Logo -->
-    <div class="px-5 py-4 flex items-center gap-3">
-        <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>
-        </svg>
-        <div>
-            <span class="font-bold">Portal</span> <span class="text-[#38bdf8]">TIK</span>
+    <div class="px-5 py-5 flex items-center justify-center border-b border-slate-700">
+        <div class="text-center">
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-sky-400 to-sky-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <span class="text-lg font-bold text-white">UPA <span class="text-sky-400">TIK</span></span>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Universitas Lampung</p>
         </div>
     </div>
 
-    <!-- Navigation -->
     <nav class="flex-1 px-3 py-4">
         <ul class="space-y-1">
             <li>
@@ -46,9 +46,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </ul>
     </nav>
 
-    <!-- Logout -->
     <div class="px-3 py-4 border-t border-slate-700">
-        <a href="../logout.php" class="flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 transition-colors">
+        <a href="../auth/logout.php" class="flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 transition-colors">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
             </svg>
