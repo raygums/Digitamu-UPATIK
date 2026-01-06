@@ -37,7 +37,6 @@ $base_url = '';
 
                 <!-- Service Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                    
                     <!-- Janji Temu Online -->
                     <div class="service-card bg-white rounded-2xl p-8 text-center">
                         <div class="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
@@ -47,7 +46,7 @@ $base_url = '';
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-3">Janji Temu Online</h3>
                         <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-                            Jadwalkan pertemuan dengan staf teknis atau administrasi UPA TIK tanpa harus datang mengantri.
+                            Jadwalkan pertemuan dengan staf teknis atau administrasi UPA TIK.
                         </p>
                         <a href="janji-temu.php" class="block w-full bg-[#38bdf8] hover:bg-[#0ea5e9] text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm">
                             Buat Jadwal
@@ -63,13 +62,23 @@ $base_url = '';
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-3">Peminjaman Fasilitas</h3>
                         <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-                            Ajukan permohonan peminjaman laboratorium komputer, ruang server, atau peralatan multimedia.
+                            Ajukan peminjaman ruangan, proyektor, atau peralatan jaringan.
                         </p>
                         <a href="peminjaman.php" class="block w-full bg-[#38bdf8] hover:bg-[#0ea5e9] text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm">
                             Ajukan Pinjaman
                         </a>
                     </div>
 
+                </div>
+
+                <!-- Cek Status Button -->
+                <div class="mt-8 text-center">
+                    <a href="cek-status.php" class="inline-flex items-center gap-2 text-slate-600 hover:text-[#0ea5e9] font-medium text-sm transition-colors">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        Cek Status Permohonan
+                    </a>
                 </div>
             </div>
         </section>
