@@ -41,7 +41,7 @@ $stats['total_staff'] = $row['total'] ?? 0;
 
 $result = query("SELECT COALESCE(ROUND(AVG(daily_count)), 0) as avg FROM (SELECT COUNT(*) as daily_count FROM kunjungan WHERE waktu_masuk >= CURRENT_DATE - INTERVAL '30 days' GROUP BY DATE(waktu_masuk)) sub");
 $row = fetchOne($result);
-$stats['rata_rata_harian'] = $row['avg'] ?? 0;
+$stats['rata_rata_harian'] = (int)($row['avg'] ?? 0);
 
 $keperluan_stats = fetchAll(query("
     SELECT 
