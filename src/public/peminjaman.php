@@ -10,12 +10,14 @@ $fasilitas = fetchAll(query("SELECT id_fasilitas, nama_fasilitas, jenis FROM fas
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nama_peminjam = trim($_POST['nama_peminjam'] ?? '');
+    $email = trim($_POST['email'] ?? '');
     $instansi = trim($_POST['instansi'] ?? '');
     $id_fasilitas = $_POST['id_fasilitas'] ?? '';
     $tanggal_mulai = $_POST['tanggal_mulai'] ?? '';
     $tanggal_selesai = $_POST['tanggal_selesai'] ?? '';
 
     if (empty($nama_peminjam)) $errors['nama_peminjam'] = 'Nama wajib diisi';
+    if (empty($email)) $errors['email'] = 'Email wajib diisi';
     if (empty($instansi)) $errors['instansi'] = 'Asal instansi wajib diisi';
     if (empty($id_fasilitas)) $errors['id_fasilitas'] = 'Pilih fasilitas';
     if (empty($tanggal_mulai)) $errors['tanggal_mulai'] = 'Pilih tanggal mulai';
@@ -46,9 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $sql = "INSERT INTO peminjaman (nama_peminjam, instansi, id_fasilitas, tanggal_mulai, tanggal_selesai, surat_pengantar_path) 
-                VALUES ($1, $2, $3, $4, $5, $6)";
-        $result = pg_query_params($db, $sql, [$nama_peminjam, $instansi, $id_fasilitas, $tanggal_mulai, $tanggal_selesai, $surat_path]);
+        $sql = "INSERT INTO peminjaman (nama_peminjam, email, instansi, id_fasilitas, tanggal_mulai, tanggal_selesai, surat_pengantar_path) 
+                VALUES ($1, $2, $3, $4, $5, $6, $7)";
+        $result = pg_query_params($db, $sql, [$nama_peminjam, $email, $instansi, $id_fasilitas, $tanggal_mulai, $tanggal_selesai, $surat_path]);
         
         if ($result) {
             $success = true;
@@ -136,6 +138,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php endif; ?>
                         </div>
 
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
+                                class="w-full px-4 py-3 border <?= isset($errors['email']) ? 'border-red-300' : 'border-slate-200' ?> rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-sky-400 outline-none text-sm"
+                                placeholder="Email untuk notifikasi status"
+                            >
+                            <?php if (isset($errors['email'])): ?>
+                                <p class="mt-1 text-xs text-red-500"><?= $errors['email'] ?></p>
+                            <?php endif; ?>
+                        </div>
+
                         <!-- Asal Instansi -->
                         <div>
                             <label for="instansi" class="block text-sm font-medium text-slate-700 mb-2">Asal Instansi / UKM</label>
@@ -162,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             >
                                 <option value="">- Pilih Barang / Ruangan -</option>
                                 <?php foreach ($fasilitas as $f): ?>
-                                    <option value="<?= $f['id'] ?>" <?= ($_POST['id_fasilitas'] ?? '') == $f['id'] ? 'selected' : '' ?>>
+                                    <option value="<?= $f['id_fasilitas'] ?>" <?= ($_POST['id_fasilitas'] ?? '') == $f['id_fasilitas'] ? 'selected' : '' ?>>
                                         <?= htmlspecialchars($f['nama_fasilitas']) ?> (<?= ucfirst($f['jenis']) ?>)
                                     </option>
                                 <?php endforeach; ?>
