@@ -13,6 +13,10 @@ module.exports = {
         'sky-primary': '#0ea5e9',
         'sky-hover': '#0284c7',
         'light-blue': '#00B4D8',
+      },
+      backgroundImage: {
+        'hero-pattern': "url('./assets/images/background.png')",
+        // 'footer-texture': "url('/src/assets/texture.png')",
       }
     },
   },
